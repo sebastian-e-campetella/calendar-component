@@ -105,6 +105,7 @@ class Calendar {
 
 /***
 **  Behavior about view class
+**  Selected method return selected day
 ***/
 
 class CalendarView {
@@ -126,6 +127,10 @@ class CalendarView {
  
   get calendar(){
     return self.calendar;
+  }
+
+  get selected(){
+    return self.calendar.currentDate;
   }
 
   fill_holidays(){
