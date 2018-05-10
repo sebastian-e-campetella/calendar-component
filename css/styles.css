@@ -27,6 +27,11 @@
 .holiday, .selected{
   border-radius: 50%;
 }
+
+.day:active {
+  transform: scale(0.9);
+}
+
 .selected {
   background: #854fe4 !important;
   color: white !important;    
