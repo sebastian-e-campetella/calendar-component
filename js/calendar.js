@@ -175,6 +175,7 @@ class CalendarView {
 		let calendar_view = self.template.content.cloneNode(true);
     let prev = calendar_view.querySelector("#prev");
     let next = calendar_view.querySelector("#next");
+    calendar_view.querySelector(".day").remove(true);
     document.getElementById("wrapper").innerHTML = ""
     prev.onclick = function(){ 
       view.calendar.prevMonth();
