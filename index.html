@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Calendar</title>
+  <meta name="description" content="">
+  <meta name="Campetella Sebasti&aacute;n" content="">
+
+  <template id="calendar-tpl">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" id="calendar_link" >
+		<div id="calendar">
+			<div class="controls">
+				<div id="prev" class="zoom-prev"> << </div>
+				<div id="year"></div>
+				<div id="next" class="zoom-next"> >> </div>
+      </div>  
+
+			<div id="days" class="week">
+				<div id="sunday" class="names-day">
+					<span>Sunday</span>
+					<div class="day">
+				 </div>
+				</div>
+				<div id="monday" class="names-day">
+					<span>Monday</span>
+				</div>
+				<div id="thuesday" class="names-day">
+					<span>Tuesday</span>
+				</div>
+				<div id="wednesday" class="names-day">
+					<span>Wednesday</span>
+				</div>
+				<div id="thrusday" class="names-day">
+					<span>Thrusday</span>
+				</div>
+				<div id="friday" class="names-day">
+					<span>Friday</span>
+				</div>
+				<div id="saturday" class="names-day">
+					<span>Saturday</span>
+				</div>
+			</div>
+		</div>
+  </template>
+  <script src="js/calendar.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+	</div>
+
+	<script>
+		var dictionary = Object.assign({},names_days, names_months);
+		var vcalendar = new CalendarView( document.head.querySelector("#calendar-tpl"), dictionary);
+    vcalendar.fill_holidays();
+	</script> 
+</body>
+</html>

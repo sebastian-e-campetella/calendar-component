@@ -1,0 +1,178 @@
+#wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+#calendar {
+  border: 1px solid #854fe4;
+  box-shadow: 0.3em 0.3em 0.3em #976fa9;
+}
+
+@media only screen and (max-width: 768px) {
+  #calendar {
+    width: 320px;
+  }
+  .names-day{
+    padding: 1px;
+    font-size: 0.65em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #calendar {
+    width: 600px;
+  }
+}
+
+.holiday, .selected{
+  border-radius: 50%;
+}
+.selected {
+  background: #854fe4 !important;
+  color: white !important;    
+  width: 40%;
+  margin-left: 22% !important;
+  box-shadow: 0.3em 0.3em 0.3em #976fa9 !important;
+}
+
+.holiday{
+  background: #f44336;
+  color: white !important;
+  width: 40%;
+  margin-left: 22% !important;
+  box-shadow: 0.15em 0.3em 0.2em #f77558;
+}
+
+@-webkit-keyframes scaling-next {
+  0% {
+    transform: rotate3d(1,1,0,35deg);
+    border-radius: 20% 0%;
+    scale(1.0); 
+  }
+  50% {
+    transform: rotate3d(1,1,0,45deg);
+    border-radius: 0% 30%;
+  }
+  100% {
+    transform: rotate3d(1,1,0,30deg);
+    border-radius: 0%;
+    scale(1.15); 
+  }
+}
+
+@-webkit-keyframes scaling-prev {
+  0% {
+    transform: rotate3d(0,1,1,-15deg);
+    border-radius: 30% 0%;
+    scale(1.0); 
+  }
+  50% {
+    transform: rotate3d(0,1,1,-20deg);
+    border-radius: 0% -30%;
+  }
+  100% {
+    transform: rotate3d(0,1,1,0deg);
+    border-radius: 0%;
+    scale(1.15); 
+  }
+}
+
+@-webkit-keyframes scaling-background {
+  0% {
+    border-radius: 20% 0%;
+    background: #854fe4;
+    scale(1.0); 
+  }
+  50% {
+    border-radius: 0% 50%;
+  }
+  100% {
+    border-radius: 0%;
+    background: white;
+    scale(0.95); 
+  }
+}
+
+.zoom-background {
+  -webkit-animation: scaling-background 0.5s;
+  -webkit-animation: scaling-background 0.5s; /* Safari 4+ */
+  -moz-animation:    scaling-background 0.5s; /* Fx 5+ */
+  -o-animation:      scaling-background 0.5s; /* Opera 12+ */
+  animation:         scaling-background 0.5s; /* IE 10+, Fx 29+ */
+}
+
+.zoom-next {
+  -webkit-animation: scaling-next 0.5s;
+  -webkit-animation: scaling-next 0.5s; /* Safari 4+ */
+  -moz-animation:    scaling-next 0.5s; /* Fx 5+ */
+  -o-animation:      scaling-next 0.5s; /* Opera 12+ */
+  animation:         scaling-next 0.5s; /* IE 10+, Fx 29+ */
+}
+
+.zoom-prev {
+  -webkit-animation: scaling-prev 0.5s;
+  -webkit-animation: scaling-prev 0.5s; /* Safari 4+ */
+  -moz-animation:    scaling-prev 0.5s; /* Fx 5+ */
+  -o-animation:      scaling-prev 0.5s; /* Opera 12+ */
+  animation:         scaling-prev 0.5s; /* IE 10+, Fx 29+ */
+}
+
+.controls div:hover {
+  transform: scale(1.5);
+}
+
+#sunday div{
+  color: #854fe4;
+  font-weight: bold;
+  margin:0.24em;
+}
+
+.controls{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #854fe4;
+  color: white;  
+  justify-content: space-around; 
+  text-align: center;     
+  padding:0.25em;
+  font-weight: bold;
+}
+
+.week {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;     
+}
+
+.controls #prev, .controls #year, .controls #next {
+  width: 33%;
+  cursor: pointer;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  padding:0.25em;
+  cursor: pointer;
+}
+
+.names-day{
+  padding: 0.3em 0;
+  text-align: center;
+}
+
+.names-day div {
+  margin: 0.24em 0 0.24em 0;
+}
+
+.names-day span {
+  color: #854fe4;
+  padding: 0.22em;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0.1em;
+  font-size: 0.9em;
+}
